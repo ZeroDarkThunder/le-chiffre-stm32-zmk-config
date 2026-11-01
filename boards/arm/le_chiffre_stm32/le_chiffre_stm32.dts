@@ -8,6 +8,7 @@
 #include <st/f0/stm32f072Xb.dtsi>
 #include <st/f0/stm32f072v(8-b)tx-pinctrl.dtsi>
 
+
 #include <dt-bindings/zmk/matrix_transform.h>
 
 / {
@@ -105,21 +106,21 @@
         ;
     };
 
-    encoder: encoder {
+        encoder: encoder {
         compatible = "alps,ec11";
         label = "ENCODER";
         a-gpios = <&gpiob 4 (GPIO_ACTIVE_HIGH | GPIO_PULL_UP)>;
         b-gpios = <&gpiob 5 (GPIO_ACTIVE_HIGH | GPIO_PULL_UP)>;
-	steps = <30>;
-        status = "disabled";
+        steps = <30>;
+        status = "okay";
     };
 
     sensors: sensors {
         compatible = "zmk,keymap-sensors";
-        status = "disabled";
+        status = "okay";
         sensors = <&encoder>;
 
-	triggers-per-rotation = <15>;
+        triggers-per-rotation = <15>;
     };
 };
 
